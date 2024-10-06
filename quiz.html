@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inertia Pendulum Quiz</title>
+    <style>
+    body {
+            font-family: Arial, sans-serif;
+            background-color: #6DBD8A;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start; /* Changed from center to flex-start */
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow-y: auto; 
+        }
+
+        .quiz-container {
+            width: 80%;
+            max-width: 700px;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+            overflow-y: auto; 
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            font-size: 24px;
+        }
+
+        .question {
+            margin: 15px 0;
+        }
+
+        .question p {
+            font-weight: bold;
+            color: #333;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            cursor: pointer;
+        }
+
+        input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #0cf53e;
+            color: #f2f5f2;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #result {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        #result h2 {
+            color: #007bff;
+            font-size: 20px;
+        }
+
+        #result p {
+            color: #333;
+            font-size: 16px;
+        }
+
+        #swing-header {
+            font-size: 36px;
+            color: #6DBD8A;
+            margin-bottom: 20px;
+            animation: swing 4s ease-in-out infinite;
+            text-align: center;
+            background-color: #ffffff;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        @keyframes swing {
+            0% { transform: rotate(0deg); }
+            25% { transform: rotate(5deg); }
+            50% { transform: rotate(0deg); }
+            75% { transform: rotate(-5deg); }
+            100% { transform: rotate(0deg); }
+        }
+
+        html, body {
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <div id="swing-header">Welcome to the Inertia Pendulum Quiz</div>
+        <form id="quiz-form">
+            <div id="questions-container"></div>
+            <button type="button" onclick="submitQuiz()">Submit Quiz</button>
+        </form>
+        <div id="result"></div>
+    </div>
+
+    <script src="quiz.js"></script>
+</body>
+</html>
